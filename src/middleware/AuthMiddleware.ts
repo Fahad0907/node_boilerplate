@@ -10,7 +10,7 @@ declare module "express-serve-static-core" {
 }
 
 export class Auth {
-    public static middleWare = async(req: Request, res: Response, next: NextFunction) => {
+    public static gaurd = async(req: Request, res: Response, next: NextFunction) => {
         const token = req.header("Authorization")?.split(" ")[1];
         
         if (!token) {

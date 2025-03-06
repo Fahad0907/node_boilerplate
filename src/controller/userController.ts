@@ -5,6 +5,7 @@ import { ILogin } from "../interface/userInterface";
 import {MESSAGE, DATA} from "../utils/constant";
 import {Transaction} from "sequelize";
 import {sequelize} from "../sequlize";
+import { UserRepository } from "../repositories/userRepository";
 
 export class UserController extends BaseController{
     private _userRepository : IUserRepo;
@@ -12,6 +13,11 @@ export class UserController extends BaseController{
     constructor(userRepository : IUserRepo){
         super();
         this._userRepository = userRepository;
+    }
+
+    static getUserControlerInstance() : UserController {
+        const userRepo = new UserRepository();
+        return new UserController(userRepo);
     }
 
     createUser =async(req: express.Request, res: express.Response)=> {
