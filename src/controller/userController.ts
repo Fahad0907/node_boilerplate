@@ -6,6 +6,7 @@ import {MESSAGE, DATA} from "../utils/constant";
 import {Transaction} from "sequelize";
 import {sequelize} from "../sequlize";
 import { UserRepository } from "../repositories/userRepository";
+import pdfParse from "pdf-parse"; 
 
 export class UserController extends BaseController{
     private _userRepository : IUserRepo;

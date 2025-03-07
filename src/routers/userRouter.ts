@@ -2,6 +2,7 @@ import express from "express";
 import { UserRepository } from "../repositories/userRepository";
 import { UserController } from "../controller/userController";
 import { Auth } from "../middleware/AuthMiddleware";
+import { upload, pdfUpload } from "../service/MulterConfig";
 
 
 const router = express.Router();
@@ -27,5 +28,6 @@ router.post("/role/create", Auth.gaurd, (req, res)=> {
 router.post("/module/create", Auth.gaurd, (req, res)=>{
     userInstance.createModule(req, res);
 })
+
 
 export default router;

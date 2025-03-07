@@ -2,6 +2,7 @@ import {Table, Column, Model, DataType, PrimaryKey, AutoIncrement, ForeignKey} f
 import { User } from "./User";
 import { Role } from "./Role";
 
+
 @Table({tableName: "userRole"})
 export class UserRole extends Model{
     @Column({primaryKey : true, autoIncrement: true, type: DataType.INTEGER})
